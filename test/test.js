@@ -34,7 +34,7 @@ describe('Funcionalidade básica', () => {
     });
 
     // /notification
-    it('Deve responder a uma requisição de sucesso válida em /notification com status 204', (done) => {
+    it('Deve responder a uma requisição de sucesso válida em /notification com status 202', (done) => {
         chai.request(app).post('/notification').set('content-type', 'application/x-www-form-urlencoded').send({
             evt: 'ReportGenerated',
             execution: '20201015.111226-ij0uxv',
@@ -46,13 +46,13 @@ describe('Funcionalidade básica', () => {
             } else {
                 chai.expect(response.status).not.be.undefined;
                 chai.expect(response.status).not.be.null;
-                chai.expect(response.status).to.equal(204);
+                chai.expect(response.status).to.equal(202);
 
                 return done();
             }
         });
     });
-    it('Deve responder a uma requisição de falha válida em /notification com status 204', (done) => {
+    it('Deve responder a uma requisição de falha válida em /notification com status 202', (done) => {
         chai.request(app).post('/notification').set('content-type', 'application/x-www-form-urlencoded').send({
             evt: 'ExecutionFinishedWithError',
             execution: '20201015.111226-ij0uxv',
@@ -64,7 +64,7 @@ describe('Funcionalidade básica', () => {
             } else {
                 chai.expect(response.status).not.be.undefined;
                 chai.expect(response.status).not.be.null;
-                chai.expect(response.status).to.equal(204);
+                chai.expect(response.status).to.equal(202);
 
                 return done();
             }

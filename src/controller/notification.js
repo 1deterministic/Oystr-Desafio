@@ -19,7 +19,7 @@ module.exports = {
             !request.body.bot
         ) {
             console.log('[Invalid] notificação inválida ou incompleta recebida.');
-            return response.status(400).send();
+            return response.status(400).send({});
         }
 
         // enviar webhook e exibir mensagem de log no terminal
@@ -47,6 +47,6 @@ module.exports = {
         
         // a mensagem será exibida e a resposta da requisição enviada independentemente do retorno da webhook
         console.log(notification);
-        return response.status(204).send();
+        return response.status(202).send({});
     }
 };
