@@ -1,0 +1,19 @@
+{
+  "name": "oystr-desafio",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon ./src/server.js",
+    "test": "mocha ./test/test.js",
+    "start": "node ./src/server.js"
+  },
+  "dependencies": {
+    "express": ">=4.17.1",
+    "axios": ">=0.21.1"
+  },
+  "devDependencies": {
+    "nodemon": ">=2.0.12",
+    "chai": ">=4.3.4",
+    "chai-http": ">=4.3.0",
+    "mocha": ">=9.0.3"
+  }
+}
